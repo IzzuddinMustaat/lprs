@@ -1,0 +1,277 @@
+/* --- Global Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    padding: 2rem;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+/* Nav */
+.top-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    background: transparent;
+    color: #4b5563;
+}
+
+.nav-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.nav-btn.active {
+    background-color: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+/* Sections */
+.section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.section h2 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #d81b60;
+    padding-bottom: 5px;
+}
+
+/* Inputs */
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button */
+.submit-btn {
+    padding: 0.7rem 1.5rem;
+    background-color: #21c05e;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #1da750;
+}
+
+/* Message */
+#message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.register-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #111827;
+}
+
+.top-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #4b5563;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.nav-btn.active {
+    background-color: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+
+/* --- Logout Button --- */
+.logout-btn {
+    padding: 0.5rem 1rem;
+    background-color: #dc2626; /* stronger red */
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background-color: #b91c1c; /* darker red on hover */
+}
+
+/* 1. Style untuk Container Form Utama */
+#registerForm {
+  max-width: 900px;        
+  margin: 30px auto;       
+  padding: 25px;
+  background-color: #f4f4f9; 
+  border-radius: 10px;    
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Style untuk setiap Kotak Bagian (Owner & Vehicle) */
+.section {
+  background-color: #ffffff; 
+  padding: 20px;
+  margin-bottom: 25px;       
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+/* 3. Style untuk Judul Bagian (h2) */
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333333;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #d81b60; 
+  padding-bottom: 8px;
+}
+
+/* 4. Style untuk Label Teks */
+label {
+  display: block;         
+  font-weight: 600;
+  margin-bottom: 6px;      
+  color: #444444;
+  font-size: 0.95rem;
+}
+
+/* 5. Style untuk Kotak Input dan Dropdown (Select) */
+input[type="text"],
+select {
+  width: 100%;            
+  padding: 12px;           
+  margin-bottom: 20px;     
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box;  
+  font-size: 1rem;
+  transition: all 0.3s ease; 
+}
+
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #d81b60;  
+  outline: none;           
+  box-shadow: 0 0 8px rgba(216, 27, 96, 0.2); 
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+    padding: 0.5rem 1rem;
+    background-color: #21c05e; /* stronger red */
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #1da750; /* darker green on hover */
+}

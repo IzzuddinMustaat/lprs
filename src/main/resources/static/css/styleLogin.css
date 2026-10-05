@@ -1,0 +1,168 @@
+/* ============================================
+   LPR SYSTEM — LOGIN PAGE STYLESHEET
+   File: css/style.css
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-color: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-heading: #2b2b2b;
+  --text-label: #444;
+  --text-muted: #aaa;
+  --input-border: #222;
+  --input-border-focus: #4caf50;
+  --btn-bg: #3cb043;
+  --btn-hover: #2e8b35;
+  --btn-text: #fff;
+  --font: 'Nunito', sans-serif;
+  --shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ============================================
+   BODY / BACKGROUND
+   👇 Paste your image URL inside url("...")
+   ============================================ */
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Anjung_Putra%2C_UPM.jpg/1920px-Anjung_Putra%2C_UPM.jpg?_=20220909041216");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+
+  font-family: var(--font);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ============================================
+   PAGE TITLE (above the card)
+   ============================================ */
+.page-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  background: #ffffff;
+  padding: 2px 2px 4px;
+  border-radius: 16px;
+  color: var(--text-heading);
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  animation: fadeDown 0.5s ease both;
+}
+
+/* ============================================
+   WHITE CARD
+   ============================================ */
+.login-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 44px 40px 40px;
+  width: 100%;
+  max-width: 440px;
+  animation: fadeUp 0.55s ease 0.1s both;
+}
+
+/* ============================================
+   LABELS
+   ============================================ */
+.field-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-label);
+  margin-bottom: 8px;
+}
+
+/* ============================================
+   INPUT WRAPPER
+   ============================================ */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--input-border);
+  border-radius: 8px;
+  background: #ffffff;
+  margin-bottom: 20px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-wrapper:focus-within {
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 3px rgba(76,175,80,0.15);
+}
+.input-icon {
+  padding: 0 14px;
+  color: #888;
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* ============================================
+   INPUTS
+   ============================================ */
+input[type="text"],
+input[type="password"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #ffffff;
+  padding: 13px 14px 13px 0;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  color: var(--text-heading);
+  border-radius: 0 8px 8px 0;
+}
+input::placeholder { color: var(--text-muted); }
+
+/* ============================================
+   BUTTON
+   ============================================ */
+button {
+  width: 100%;
+  padding: 15px;
+  background: var(--btn-bg);
+  border: none;
+  border-radius: 50px;
+  color: var(--btn-text);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 4px 16px rgba(60,176,67,0.30);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+button:hover {
+  background: var(--btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(60,176,67,0.40);
+}
+button:active { transform: translateY(0); }
+
+h2 { display: none; }
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeDown {
+  from { opacity:0; transform:translateY(-16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .login-card { padding: 32px 20px 28px; }
+  .page-title { font-size: 1.5rem; }
+}

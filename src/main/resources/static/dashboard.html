@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LPR Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styleDashboard.css">
+</head>
+
+<body class="bg-light">
+
+<div class="container py-4">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2 class="mb-0">LPR Dashboard</h2>
+
+        <div class="btn-group">
+
+            <button class="btn btn-primary" onclick="goLog()">
+                Dashboard
+            </button>
+
+            <button class="btn btn-outline-primary" onclick="goOwner()">
+                Vehicle Owner
+            </button>
+
+            <button class="btn btn-outline-primary" onclick="goRegister()">
+                Register
+            </button>
+
+            <button class="btn btn-danger" onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="input-group mb-4">
+
+        <input
+            class="form-control"
+            type="text"
+            id="searchInput"
+            placeholder="Enter Plate Number">
+
+        <button
+            class="btn btn-success"
+            onclick="searchVehicle()">
+            Search
+        </button>
+
+    </div>
+
+    <h4 class="mb-3">Vehicle Logs</h4>
+
+    <!-- Table -->
+    <div class="table-responsive">
+
+        <table class="table table-striped table-hover bg-white shadow-sm">
+
+            <thead class="table-dark">
+                <tr>
+                    <th>Plate Number</th>
+                    <th>Entry Time</th>
+                    <th>Exit Time</th>
+                    <th>Status</th>
+                    <th>Registered</th>
+                </tr>
+            </thead>
+
+            <tbody id="logTable"></tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+    function goLog() {
+        window.location.href = "dashboard.html";
+    }
+
+    function goOwner() {
+        window.location.href = "vehicle-owner.html";
+    }
+
+    function goRegister() {
+        window.location.href = "register.html";
+    }
+
+    function logout() {
+        window.location.href = "login.html";
+    }
+
+    function searchVehicle() {
+        let searchText = document.getElementById("searchInput").value;
+        loadLogs(searchText);
+    }
+
+    window.onload = function () {
+        loadLogs();
+    };
+
+    function loadLogs(searchText = "") {
+
+        fetch("api/vehicle-log")
+        .then(res => res.json())
+        .then(data => {
+
+            let table = document.getElementById("logTable");
+
+            let rows = "";
+
+            let filteredData = data.filter(log => {
+                if (searchText === "") return true;
+
+                return log.plateNum
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase());
+            });
+
+            filteredData.forEach(log => {
+
+                let status = log.exitTime
+                    ? '<span class="badge bg-secondary">EXITED</span>'
+                    : '<span class="badge bg-success">INSIDE</span>';
+
+                rows += `
+                <tr>
+                    <td>${log.plateNum}</td>
+                    <td>${log.entryTime}</td>
+                    <td>${log.exitTime || "-"}</td>
+                    <td>${status}</td>
+                    <td>${log.registration}</td>
+                </tr>`;
+            });
+
+            table.innerHTML = rows;
+        })
+        .catch(error => {
+            console.error("Failed to load logs:", error);
+        });
+    }
+
+</script>
+
+</body>
+</html>
